@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavParams } from '@ionic/angular';
+import { NavController, NavParams } from '@ionic/angular';
 import { Pokemon } from 'src/app/models/pokemon';
 
 @Component({
@@ -8,16 +8,20 @@ import { Pokemon } from 'src/app/models/pokemon';
   styleUrls: ['./detail-pokemon.page.scss'],
   standalone :false
 })
-export class DetailPokemonPage implements OnInit {
+export class DetailPokemonPage {
   public pokemon: Pokemon;
   constructor(
-    private navParams: NavParams
+    private navParams: NavParams,
+    private navController: NavController
   ) { 
     this.pokemon =this.navParams.data["pokemon"];
     console.log(this.pokemon);
   }
 
-  ngOnInit() {
+
+  
+  goBack(){
+    this.navController.pop();
   }
 
 }
