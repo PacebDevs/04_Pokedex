@@ -31,7 +31,9 @@ ion-header{
     min-height: 56px;
     background-size: cover;
 }
-
+ion-header .header-background{
+ backdrop-filter: none !important;
+}
 ion-text{
     color: #000;
     font-size: 1.2em;

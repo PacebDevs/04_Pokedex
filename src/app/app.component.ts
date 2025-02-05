@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class AppComponent {
-  constructor() {}
+  constructor(
+    private screenOrientation: ScreenOrientation
+  ) {
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT)
+  }
 }
